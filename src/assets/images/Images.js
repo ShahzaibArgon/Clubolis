@@ -61,7 +61,9 @@ const images ={
      checkOutImage:require('../images/checkOutImage.png'),
      plus:require('../images/plus.png'),
      mius:require('../images/mius.png'),
-     bussinessFactory:require('../images/BussinessFactory.png')
+     bussinessFactory:require('../images/BussinessFactory.png'),
+     bottomTabSaqurebackgroundImage:require('../images/BottomTabSaqure.png'),
+     addEventRed:require('../images/redEvent.png')
 }
 
 export default images;

@@ -77,18 +77,17 @@ const BussinessDetail = (props) => {
             </TouchableOpacity>
             <View style={{ height: H(3) }} />
             <View style={styles.bottomcontiner}>
-               
                 <Image
                     resizeMode={'contain'}
                     source={IMAGES.bussinessFactory}
                     style={styles.bussinesImageStyle}
                 />
                 <View style={styles.rightContiner}>
-                <Text style={styles.bussinessTextStyle}>{STRINGS.BusinessName}</Text>
-                <View style={styles.line} />
-                <Text style={styles.bussinessTextStyle}>{STRINGS.BusinessCategory}</Text>
-                <View style={styles.line} />
-                <Text style={styles.bussinessTextStyle}>{STRINGS.BusinessNumber}</Text>
+                    <Text style={styles.bussinessTextStyle}>{STRINGS.BusinessName}</Text>
+                    <View style={styles.line} />
+                    <Text style={styles.bussinessTextStyle}>{STRINGS.BusinessCategory}</Text>
+                    <View style={styles.line} />
+                    <Text style={styles.bussinessTextStyle}>{STRINGS.BusinessNumber}</Text>
                 </View>
             </View>
         </SafeAreaView>

@@ -23,12 +23,11 @@ import BussinessForum from '../screen/BussinessFroum/BussinessForum';
 import Event from '../screen/Event/Event';
 import Profile from '../screen/Profile/Profile';
 import Login from '../screen/Login/Login';
-import { COLORS, FONTS, H, STRINGS, W } from '../constants/StyleCommonfile';
+import { COLORS, FONTS, H, IMAGES, STRINGS, W } from '../constants/StyleCommonfile';
 import colors from '../assets/colors/Colors';
 import ActivityScreen from '../screen/ActivityScreen/ActivityScreen';
 
 const { height, width } = Dimensions.get('window');
-
 
 const BottomNavigator = props => {
     const [isMediaOptionsModal, setMediaOptionsModal] = useState(false);
@@ -198,14 +197,15 @@ const BottomNavigator = props => {
                 onBackdropPress={() => setMediaOptionsModal(false)}
                 useNativeDriver={true}
                 onBackButtonPress={() => setMediaOptionsModal(false)}>
-                <View style={styles.btnsContainer}>
+                <ImageBackground
+                    source={IMAGES.bottomTabSaqurebackgroundImage}
+                    style={styles.btnsContainer}>
                     <TouchableOpacity
                         onPress={() => _handleServe()}
                         style={styles.optionIconContainer}>
                         <Image
                             style={styles.floatingButtonStyle}
-                            source={images.addPhoto}
-                        />
+                            source={images.addPhoto} />
                         <Text style={styles.btnTextStyle}>{STRINGS.AddPhotoCaption}</Text>
                     </TouchableOpacity>
                     <TouchableOpacity
@@ -214,11 +214,19 @@ const BottomNavigator = props => {
                         style={styles.optionIconContainer}>
                         <Image
                             style={styles.floatingButtonStyle}
-                            source={images.addBussiness}
-                        />
+                            source={images.addBussiness} />
                         <Text style={styles.btnTextStyle}>{STRINGS.AddBusiness}</Text>
                     </TouchableOpacity>
-                </View>
+                    <TouchableOpacity
+                        onPress={() => _handleShare()}
+                        disabled={!isMediaOptionsModal}
+                        style={styles.eventIconStyle}>
+                        <Image
+                            style={styles.floatingButtonStyle}
+                            source={images.addEventRed} />
+                        <Text style={styles.btnTextStyle}>{STRINGS.AddEvent}</Text>
+                    </TouchableOpacity>
+                </ImageBackground>
             </Modal>
         </>
     );
@@ -284,28 +292,24 @@ const styles = StyleSheet.create({
         height: H('90%'),
         width: W('100%'),
         zIndex: 9999,
-        // backgroundColor: "#ada"
     },
     btnsContainer: {
-        height: H(30),
+        height: H(32),
         width: '100%',
         flexDirection: 'row',
         justifyContent: 'space-around',
-        // zIndex: -9999,
-        // marginBottom: height / 30,
-        alignSelf: 'center',
-        backgroundColor: colors.bottomTabSqureColor,
-        borderTopLeftRadius: H(30),
-        borderTopRightRadius: H(30)
+        opacity: 0.9,
+        bottom: 3,
+        resizeMode: 'contain',
+        overflow: 'hidden'
     },
     optionIconContainer: {
-        height: Platform.OS == 'ios' ? height / 14 : height / 12,
+        height: Platform.OS == 'ios' ? height / 2.2 : height / 12,
         width: Platform.OS == 'ios' ? height / 14 : height / 12,
         alignItems: 'center',
         justifyContent: 'center',
         marginHorizontal: Platform.OS == 'ios' ? height / 28 : height / 24,
     },
-
     videoRecordingBtn: {
         alignSelf: 'center',
     },
@@ -324,12 +328,24 @@ const styles = StyleSheet.create({
         height: w(8),
         resizeMode: 'contain',
     },
-    btnTextStyle:{
-        color:COLORS.white,
-        width:W(30),
-        textAlign:'center',
-        fontSize:RFValue(7),
-        fontFamily:FONTS.Bold,
-        marginTop:H(0.5)
+    btnTextStyle: {
+        color: COLORS.white,
+        width: W(30),
+        textAlign: 'center',
+        fontSize: RFValue(7),
+        fontFamily: FONTS.Bold,
+        marginTop: H(0.5)
+    },
+    eventIconStyle:{
+        alignItems:'center',
+        backgroundColor:'#ada',
+        position:'absolute',
+        left:0,
+        right:0,
+        alignSelf:'center',
+        alignItems:'center',
+        justifyContent:'center',
+        width:W(20),
+        alignSelf:'center'
     }
 });
