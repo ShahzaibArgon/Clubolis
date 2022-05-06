@@ -14,10 +14,7 @@ import { normalize } from "../../Helpers/normalize";
 import { getStatusBarHeight } from 'react-native-status-bar-height';
 import { MaterialCommunityIcons, AntDesign } from '@expo/vector-icons';
 import { TextInput } from 'react-native-paper';
-
-
-
-
+import { COLORS, FONTS, H, RFVALUE } from "../../constants/StyleCommonfile";
 
 const SignUp = ({ navigation, route }) => {
     const [text, setText] = useState("");
@@ -40,67 +37,67 @@ const SignUp = ({ navigation, route }) => {
                     <View style={styles.loginView}>
                         <TextInput
                             mode="outlined"
-                            outlineColor="white"
+                            outlineColor={COLORS.darkWhite}
                             style={styles.input}
                             // label="Email or Username"
                             placeholder="First Name"
                             placeholderTextColor={"white"}
                             value={fName}
-                            theme={{ colors: { text: 'white', primary: 'white' }, roundness: normalize(9) }}
+                            theme={{ colors: { text: 'white', primary: 'white' }, roundness: normalize(12) }}
                             onChangeText={text => setfName(text)}
                         />
                         <TextInput
                             mode="outlined"
-                            outlineColor="white"
+                            outlineColor={COLORS.darkWhite}
                             style={styles.input}
                             // label="Email or Username"
                             placeholder="Last Name"
                             placeholderTextColor={"white"}
                             value={lName}
-                            theme={{ colors: { text: 'white', primary: 'white' }, roundness: normalize(9) }}
+                            theme={{ colors: { text: 'white', primary: 'white' }, roundness: normalize(12) }}
                             onChangeText={text => setlName(text)}
                         />
                         <TextInput
                             mode="outlined"
-                            outlineColor="white"
+                            outlineColor={COLORS.darkWhite}
                             style={styles.input}
                             // label="Email or Username"
                             placeholder="Create Username"
                             placeholderTextColor={"white"}
                             value={text}
-                            theme={{ colors: { text: 'white', primary: 'white' }, roundness: normalize(9) }}
+                            theme={{ colors: { text: 'white', primary: 'white' }, roundness: normalize(12) }}
                             onChangeText={text => setText(text)}
                         />
                         <TextInput
                             keyboardType="number-pad"
                             mode="outlined"
-                            outlineColor="white"
+                            outlineColor={COLORS.darkWhite}
                             style={styles.input}
                             placeholder="Phone Number"
                             placeholderTextColor={"white"}
                             value={pNumber}
-                            theme={{ colors: { text: 'white', primary: 'white' }, roundness: normalize(9) }}
+                            theme={{ colors: { text: 'white', primary: 'white' }, roundness: normalize(12) }}
                             onChangeText={text => setpNumber(text)}
                         />
                         <TextInput
                             mode="outlined"
-                            outlineColor="white"
+                            outlineColor={COLORS.darkWhite}
                             style={styles.input}
                             placeholder="Password"
                             placeholderTextColor={"white"}
                             secureTextEntry={showPassword}
-                            theme={{ colors: { text: 'white', primary: 'white' }, roundness: normalize(9) }}
+                            theme={{ colors: { text: 'white', primary: 'white' }, roundness: normalize(12) }}
                             onChangeText={(password) => { setPassword(password) }}
                             right={<TextInput.Icon onPress={() => setShowPassword(prev => !prev)} name={showPassword ? "eye-off" : "eye"} color={"white"} />}
                         />
                         <TextInput
                             mode="outlined"
-                            outlineColor="white"
+                            outlineColor={COLORS.darkWhite}
                             style={styles.input}
                             placeholder="Confirm Password"
                             placeholderTextColor={"white"}
                             secureTextEntry={showPassword}
-                            theme={{ colors: { text: 'white', primary: 'white' }, roundness: normalize(9) }}
+                            theme={{ colors: { text: 'white', primary: 'white' }, roundness: normalize(12) }}
                             onChangeText={(cpassword) => { setcPassword(cpassword) }}
                         />
                         <TouchableOpacity
@@ -110,8 +107,12 @@ const SignUp = ({ navigation, route }) => {
                         </TouchableOpacity>
                     </View>
                     <View style={styles.signUp}>
-                        <Text style={styles.tagLine}>{"have an account?"}</Text>
-                        <Text onPress={() => navigation.navigate("Login2")} style={styles.signUpText}>{" Log In"}</Text>
+                        <TouchableOpacity disabled={true}>
+                            <Text style={styles.tagLine}>{"have an account?"}</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={() => navigation.navigate("Login2")}>
+                            <Text style={styles.signUpText}>{" Log In"}</Text>
+                        </TouchableOpacity>
                     </View>
                     <View>
                         <View style={styles.signUp}>
@@ -143,18 +144,16 @@ const styles = StyleSheet.create({
         marginTop: getStatusBarHeight() + normalize(30),
     },
     termsText: {
-        fontFamily: "Poppins-Light",
-        color: "#FFFFFF",
-        fontSize: normalize(10),
-        fontWeight: "500",
+        fontFamily: FONTS.medium,
+        color: COLORS.darkWhite,
+        fontSize: RFVALUE(10),
         textAlign: "center",
         lineHeight: 15
     },
     heading: {
-        fontFamily: "Poppins",
-        color: "#EB566B",
+        fontFamily: FONTS.Bold,
+        color: COLORS.secondary,
         fontSize: normalize(35),
-        fontWeight: "700",
         textAlign: "center",
         lineHeight: 52.5
     },
@@ -167,12 +166,10 @@ const styles = StyleSheet.create({
         lineHeight: 21
     },
     signUpText: {
-        fontFamily: "Poppins",
-        color: "#E8566B",
-        fontSize: normalize(14),
-        fontWeight: "500",
+        fontFamily: FONTS.Bold,
+        color: COLORS.secondary,
+        fontSize: RFVALUE(14),
         textAlign: "center",
-        lineHeight: 21
     },
     loginView: {
         width: "100%",
@@ -182,9 +179,8 @@ const styles = StyleSheet.create({
     text: {
         marginTop: normalize(32),
         fontFamily: "Poppins-Light",
-        color: "white",
-        fontSize: normalize(13),
-        fontWeight: "400",
+        color: COLORS.white,
+        fontSize: RFVALUE(13),
         textAlign: "center",
         lineHeight: 19.5
     },
@@ -198,11 +194,10 @@ const styles = StyleSheet.create({
         alignItems: "center"
     },
     buttonText: {
-        fontFamily: "Poppins",
-        color: "white",
+        fontFamily: FONTS.Bold,
+        color: COLORS.white,
         textAlign: "center",
         fontSize: normalize(16),
-        fontWeight: "500",
     },
     forgotPass: {
         fontFamily: "Poppins",
@@ -214,13 +209,13 @@ const styles = StyleSheet.create({
         marginTop: normalize(11),
     },
     input: {
-        color: "white",
+        color: COLORS.darkWhite,
         borderRadius: normalize(10),
         // overflow:"hidden",
-        width: "80%",
+        width: "85%",
         backgroundColor: '#24005E',
-        marginTop: normalize(27),
-        height: normalize(37),
+        marginTop: H(2),
+        height: normalize(46),
     },
     socialLogins: {
         flexDirection: "row",
@@ -250,6 +245,7 @@ const styles = StyleSheet.create({
         marginTop: normalize(20),
         flexDirection: "row",
         justifyContent: "center",
+        alignItems: 'center'
     }
 
 });

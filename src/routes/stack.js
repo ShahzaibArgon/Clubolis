@@ -15,7 +15,7 @@ const StackNavigation = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName={'OtpVerification'}
+        initialRouteName={'SplashScreen'}
         screenOptions={{
           headerShown: false
         }}>

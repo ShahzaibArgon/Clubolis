@@ -45,6 +45,8 @@ const images ={
      Bitcoin:require('../images/BitCoin.png'),
      artAndDesign:require('../images/ArtAndDesing.png'),
      car:require('../images/car.png'),
+     secondBackground:require('../images/background2.png'),
+     applogo:require('../images/logo.png'),
 }
 
 export default images;

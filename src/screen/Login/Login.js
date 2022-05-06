@@ -9,37 +9,34 @@ import {
 } from "react-native";
 import { normalize } from "../../Helpers/normalize";
 import { getStatusBarHeight } from 'react-native-status-bar-height';
-import { IMAGES,W,H } from '../../constants/StyleCommonfile'
-
-
+import { IMAGES, W, H, FONTS, COLORS, RFVALUE } from '../../constants/StyleCommonfile'
 
 const Login = ({ navigation, route }) => {
     return (
         <View style={styles.container}>
             <ImageBackground
-                source={IMAGES.backgroundImage}
+                source={IMAGES.secondBackground}
                 resizeMode="cover"
-                style={styles.image}
-            >
+                style={styles.image}>
                 <View>
-                    <Text style={styles.text}>{"Welcome to clubolis"}</Text>
+                    <Text style={styles.text}>{"Welcome to Clubolis"}</Text>
                 </View>
                 <View style={styles.logo}>
-                    <Image resizeMode="contain" source={IMAGES.loginLogo} />
+                    <Image
+                        resizeMode="contain"
+                        source={IMAGES.loginLogo}
+                    />
                 </View>
                 <View style={styles.loginView}>
-
                     <TouchableOpacity
                         onPress={() => { navigation.navigate("Login2") }}
-                        style={styles.button}
-                    >
+                        style={styles.button}>
                         <Text style={styles.buttonText}>{"Log In"}</Text>
                     </TouchableOpacity>
                     <Text style={styles.forgotPass}>{"Forgot Password?"}</Text>
                     <TouchableOpacity
                         onPress={() => { navigation.navigate("SignUp") }}
-                        style={[styles.button, { marginTop: normalize(35) }]}
-                    >
+                        style={[styles.button, { marginTop: normalize(35) }]}>
                         <Text style={styles.buttonText}>{"Sign Up"}</Text>
                     </TouchableOpacity>
                 </View>
@@ -52,8 +49,8 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     image: {
-        width:W(100),
-        height:H(100),
+        width: W(100),
+        height: H(100),
         justifyContent: "space-between",
         alignItems: "center",
         paddingTop: getStatusBarHeight() + normalize(40),
@@ -65,9 +62,9 @@ const styles = StyleSheet.create({
         justifyContent: "center"
     },
     text: {
-        fontFamily: "Poppins",
-        color: "white",
-        fontSize: 20,
+        fontFamily: FONTS.Bold,
+        color: COLORS.white,
+        fontSize: RFVALUE(20),
         textAlign: "center",
     },
     button: {
@@ -79,19 +76,16 @@ const styles = StyleSheet.create({
         alignItems: "center"
     },
     buttonText: {
-        fontFamily: "Poppins",
-        color: "white",
+        fontFamily: FONTS.Bold,
+        color: COLORS.white,
         textAlign: "center",
-        fontSize: normalize(16),
-        fontWeight: "500",
+        fontSize: RFVALUE(16),
     },
     forgotPass: {
-        fontFamily: "Poppins",
-        color: "white",
+        fontFamily: FONTS.medium,
+        color: COLORS.white,
         textAlign: "center",
-        fontSize: normalize(14),
-        fontWeight: "500",
-        lineHeight: 21,
+        fontSize: RFVALUE(14),
         marginTop: normalize(11),
     },
     loginView: {

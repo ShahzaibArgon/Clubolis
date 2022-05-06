@@ -4,7 +4,7 @@ import styles from './Styles';
 import { CommonActions } from '@react-navigation/native';
 
 // import {useDispatch, useSelector} from 'react-redux';
-import { BOTTOMTAB, LANDINGSCREEN } from '../../constants/Navigation';
+import { BOTTOMTAB, LANDINGSCREEN, LOGIN } from '../../constants/Navigation';
 import { COLORS, IMAGES } from '../../constants/StyleCommonfile';
 const SplashScreen = props => {
   const [splashBackAnim, setSplashBackAnim] = useState(new Animated.Value(0));
@@ -37,7 +37,7 @@ const SplashScreen = props => {
     props.navigation.dispatch(
       CommonActions.reset({
         index: 0,
-        // routes: [{name: isAuth ? BOTTOMTAB : LANDINGSCREEN}],
+        routes: [{ name: LOGIN }],
       }),
     );
   };
@@ -45,15 +45,11 @@ const SplashScreen = props => {
     <>
       <StatusBar backgroundColor={COLORS.primary} barStyle={'light-content'} />
       <ImageBackground
-        source={IMAGES.istbackgroundLayer}
+        source={IMAGES.secondBackground}
         style={styles.containerFluid}>
-        <View style={styles.topImageStyle}>
-          <Animated.Image
-            resizeMode="contain"
-            style={[styles.splashBackImage, {opacity: splashBackAnim}]}
-            source={IMAGES.splashScreen}
-          />
-        </View>
+        {/* <View style={styles.topImageStyle}>
+          
+        </View> */}
         <Animated.View
           style={[
             styles.overlay,
@@ -61,15 +57,12 @@ const SplashScreen = props => {
               opacity: splashOverlayAnim,
             },
           ]}>
-          {/* <Applogo /> */}
-        </Animated.View>
-        {/* <View style={styles.bottomImageStyle}>
           <Animated.Image
             resizeMode="contain"
-            style={[styles.splashBottomImage, {opacity: splashBackAnim}]}
-            source={images.splashBottom}
+            style={[styles.splashBackImage, { opacity: splashBackAnim }]}
+            source={IMAGES.applogo}
           />
-        </View> */}
+        </Animated.View>
       </ImageBackground>
     </>
   );

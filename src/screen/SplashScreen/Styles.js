@@ -17,12 +17,12 @@ const styles = StyleSheet.create({
         right: 0,
         bottom: h(6),
         ...Platform.select({
-         android:{
-            bottom: h(7),
-         },
-         ios:{
-            bottom: h(5),
-         }
+            android: {
+                bottom: h(7),
+            },
+            ios: {
+                bottom: h(5),
+            }
         }),
         justifyContent: 'center',
         alignItems: 'center'
@@ -39,35 +39,35 @@ const styles = StyleSheet.create({
     },
 
     topImageStyle: {
-        width:w(65),
-        height:h(58),
+        width: w(65),
+        height: h(58),
         position: 'absolute',
         right: -63,
         ...Platform.select({
-            android:{
+            android: {
                 top: 10,
             },
-            ios:{
+            ios: {
                 top: 40,
             }
         })
 
     },
     splashBackImage: {
-        width: w(70),
-        height: h(70),
+        width: w(60),
+        height: h(60),
         resizeMode: 'contain',
     },
     bottomImageStyle: {
-        width:w(60),
-        height:h(42),
+        width: w(60),
+        height: h(42),
         position: 'absolute',
         ...Platform.select({
-            android:{
+            android: {
                 bottom: h(-3),
                 marginLeft: h(-8),
             },
-            ios:{
+            ios: {
                 bottom: h(-0),
                 marginLeft: h(-8),
             },
@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
     },
     splashBottomImage: {
         height: h(90),
-        resizeMode:'contain',
+        resizeMode: 'contain',
         width: w(90)
     },
 
