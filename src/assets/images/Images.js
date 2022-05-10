@@ -50,6 +50,9 @@ const images ={
      whiteAppLogo:require('../images/whiteAppLogo.png'),
      whiteBackArrow:require('../images/WhiteBackArrow.png'),
      whiteBellIcon:require('../images/whiteBellIcon.png'),
+     eventBackgroundLayer:require('../images/EventBackgroundLayer.png'),
+     food:require('../images/Food.png'),
+     eventImage:require('../images/eventimage.png')
 }
 
 export default images;

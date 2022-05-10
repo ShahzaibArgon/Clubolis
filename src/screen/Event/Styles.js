@@ -6,7 +6,7 @@ export default STYLESHEET.create({
     },
     imageStyle: {
         width: W(92),
-        height: H(28),
+        height: H(24),
         alignSelf: 'center',
         borderTopRightRadius: H(9),
         borderBottomLeftRadius: H(9)
@@ -24,23 +24,25 @@ export default STYLESHEET.create({
         width: W(70),
         height: H(6),
         borderColor: COLORS.white,
-        borderRadius: H(2.7),
+        borderRadius: H(3),
         paddingLeft: H(5),
-        backgroundColor:COLORS.white
+        backgroundColor: COLORS.white,
+        elevation: 10,
+        zIndex: -1
     },
     searchContiner: {
         flexDirection: 'row',
         alignItems: 'center',
         alignSelf: 'center'
     },
-    textStyle:{
-        color:'white',
-        fontSize:RFVALUE(23),
-        fontFamily:FONTS.Bold,
-        paddingLeft:H(2),
-        marginTop:H(2)
+    textStyle: {
+        color: 'white',
+        fontSize: RFVALUE(23),
+        fontFamily: FONTS.Bold,
+        paddingLeft: H(2),
+        marginTop: H(2)
     },
-    dayTextStyle:{
-        color:COLORS.secondary
+    dayTextStyle: {
+        color: COLORS.secondary
     }
 })
