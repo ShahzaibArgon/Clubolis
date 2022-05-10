@@ -15,6 +15,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import AntDesign from 'react-native-vector-icons/AntDesign'
 import { TextInput } from 'react-native-paper';
 import { COLORS, FONTS, RFVALUE } from "../../constants/StyleCommonfile";
+import { BOTTOMTAB } from "../../constants/Navigation";
 const Login2 = ({ navigation, route }) => {
     const [text, setText] = useState("");
     const [password, setPassword] = useState('');
@@ -52,6 +53,7 @@ const Login2 = ({ navigation, route }) => {
                             right={<TextInput.Icon onPress={() => setShowPassword(prev => !prev)} name={showPassword ? "eye-off" : "eye"} color={"white"} />}
                         />
                         <TouchableOpacity
+                            onPress={() => navigation.navigate(BOTTOMTAB)}
                             style={styles.button}
                         >
                             <Text style={styles.buttonText}>{"Log In"}</Text>

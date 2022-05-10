@@ -36,6 +36,8 @@ const strings = {
     FoodCart:'Food Cart',
     ArtDesign:'Art & Design',
     Crytocurrency:'Crytocurrency',
-    Pharmacy:'Pharmacy'
+    Pharmacy:'Pharmacy',
+    ThisWeek:'This week on',
+    thursday:'Thursday'
 }
 export default strings

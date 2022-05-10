@@ -102,6 +102,7 @@ const SignUp = ({ navigation, route }) => {
                         />
                         <TouchableOpacity
                             style={styles.button}
+                            onPress={()=>navigation.navigate('OtpVerification')}
                         >
                             <Text style={styles.buttonText}>{"Sign Up"}</Text>
                         </TouchableOpacity>

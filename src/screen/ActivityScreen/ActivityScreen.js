@@ -5,8 +5,9 @@ import styles from './Styles'
 import { H, IMAGES, STRINGS } from '../../constants/StyleCommonfile'
 import Post from "../../components/Post/Post";
 const ActivityScreen = (props) => {
-    return (
-        <View style={styles.continer}>
+
+    const headerComponet = () => (
+        <>
             <Header
                 imageName={IMAGES.blackBackArrow}
                 isHomeScreen={true}
@@ -33,12 +34,20 @@ const ActivityScreen = (props) => {
                 />
             </View>
             <View style={styles.line} />
+        </>
+    )
+
+    return (
+        <View style={styles.continer}>
+
             <FlatList
                 showsVerticalScrollIndicator={false}
                 data={[1, 2, 3, 4]}
                 renderItem={() => (<Post />)}
-                ItemSeparatorComponent={() => <View style={{ height: H(7) }} />}
+                ItemSeparatorComponent={() => <View style={{ height: H(8) }} />}
                 keyExtractor={(item) => item.id}
+                ListHeaderComponent={() => headerComponet()}
+                ListFooterComponent={()=><View style={{height:H(11)}}/>}
             />
 
         </View>

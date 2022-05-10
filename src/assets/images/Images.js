@@ -47,6 +47,9 @@ const images ={
      car:require('../images/car.png'),
      secondBackground:require('../images/background2.png'),
      applogo:require('../images/logo.png'),
+     whiteAppLogo:require('../images/whiteAppLogo.png'),
+     whiteBackArrow:require('../images/WhiteBackArrow.png'),
+     whiteBellIcon:require('../images/whiteBellIcon.png'),
 }
 
 export default images;
