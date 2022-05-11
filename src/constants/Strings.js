@@ -38,6 +38,10 @@ const strings = {
     Crytocurrency:'Crytocurrency',
     Pharmacy:'Pharmacy',
     ThisWeek:'This week on',
-    thursday:'Thursday'
+    thursday:'Thursday',
+    FoodDaFiesta:'Food Da Fiesta',
+    amount:'$36',
+    locationName:'Lipsy, London',
+    dateTime:'31 Sat, Mar 2022    6:00 pm'
 }
 export default strings

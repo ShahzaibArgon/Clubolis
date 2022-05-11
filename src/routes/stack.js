@@ -7,9 +7,10 @@ import SignUp from '../screen/SignUp/SignUp';
 import SplashScreen from '../screen/SplashScreen/SplashScreen';
 import OtpVerification from '../screen/OtpVerification/OtpVerification';
 import OtpMobileVerification from '../screen/OtpMobileVerification/OtpMobileVerification';
-import { BOTTOMTAB, OTPEMAILVERIFICATION, OTPMOBILEVERIIFCATION } from '../constants/Navigation';
+import { BOTTOMTAB, EVENTDETAIL, OTPEMAILVERIFICATION, OTPMOBILEVERIIFCATION } from '../constants/Navigation';
 import OtpEmailVerification from '../screen/OtpEmailVerify/OtpEmailVerification';
 import BottomNavigator from './Bottomtab';
+import EventDetail from '../screen/EventDetail/EventDetail';
 const Stack = createNativeStackNavigator();
 const StackNavigation = () => {
   return (
@@ -27,6 +28,7 @@ const StackNavigation = () => {
         <Stack.Screen name={OTPMOBILEVERIIFCATION} component={OtpMobileVerification} />
         <Stack.Screen name={OTPEMAILVERIFICATION} component={OtpEmailVerification} />
         <Stack.Screen name={BOTTOMTAB} component={BottomNavigator} />
+        <Stack.Screen name={EVENTDETAIL} component={EventDetail} />
       </Stack.Navigator>
     </NavigationContainer>
   );

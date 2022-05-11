@@ -2,7 +2,7 @@ import { COLORS, H, STYLESHEET, W, RFVALUE, FONTS } from "../../constants/StyleC
 export default STYLESHEET.create({
     eventListContiner: {
         width: W(95),
-        height: H(18),
+        height: H(16),
         overflow: 'hidden',
         alignSelf: 'center',
         flexDirection: 'row',
@@ -20,7 +20,7 @@ export default STYLESHEET.create({
         fontSize: RFVALUE(7),
         fontFamily: FONTS.medium,
         color: COLORS.secondary,
-        marginVertical:H(0.2)
+        marginVertical: H(0.2)
     },
     rightContiner: {
         width: W(60),

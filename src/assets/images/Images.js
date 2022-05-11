@@ -52,7 +52,10 @@ const images ={
      whiteBellIcon:require('../images/whiteBellIcon.png'),
      eventBackgroundLayer:require('../images/EventBackgroundLayer.png'),
      food:require('../images/Food.png'),
-     eventImage:require('../images/eventimage.png')
+     eventImage:require('../images/eventimage.png'),
+     clock:require('../images/Clock.png'),
+     location:require('../images/locationIcon.png'),
+     eventBackground:require('../images/eventDetailbackground.png')
 }
 
 export default images;

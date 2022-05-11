@@ -1,11 +1,12 @@
 import React from "react";
 import { View, Text, TouchableOpacity, ImageBackground, Image } from 'react-native';
+import { EVENTDETAIL } from "../../constants/Navigation";
 import { COLORS, H, IMAGES, W } from "../../constants/StyleCommonfile";
 import styles from './Styles';
 
 const CustomeEvent = (props) => {
     return (
-        <TouchableOpacity>
+        <TouchableOpacity onPress={()=>props.navigation.navigate(EVENTDETAIL)}>
             <ImageBackground
                 resizeMode={'contain'}
                 source={IMAGES.eventBackgroundLayer}

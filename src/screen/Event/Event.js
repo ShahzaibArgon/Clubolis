@@ -49,12 +49,10 @@ const Event = (props) => {
 
                 <FlatList
                     data={[1, 2, 3, 4]}
-                    renderItem={() => <CustomeEvent />}
+                    renderItem={() => <CustomeEvent {...props} />}
                     ListHeaderComponent={() => headerComponent()}
-                    ListFooterComponent={()=><View style={{height:30}} />}
+                    ListFooterComponent={() => <View style={{ height: 30 }} />}
                 />
-
-
             </View>
         </ScrollView>
     )
