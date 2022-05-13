@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, Image, TextInput, FlatList } from 'react-native';
+import { View, Text, Image, TextInput, FlatList, SafeAreaView } from 'react-native';
 import Header from "../../components/Header/Header";
 import styles from './Styles'
 import { H, IMAGES, STRINGS } from '../../constants/StyleCommonfile'
@@ -38,19 +38,19 @@ const ActivityScreen = (props) => {
     )
 
     return (
-        <View style={styles.continer}>
-
-            <FlatList
-                showsVerticalScrollIndicator={false}
-                data={[1, 2, 3, 4]}
-                renderItem={() => (<Post />)}
-                ItemSeparatorComponent={() => <View style={{ height: H(8) }} />}
-                keyExtractor={(item) => item.id}
-                ListHeaderComponent={() => headerComponet()}
-                ListFooterComponent={()=><View style={{height:H(11)}}/>}
-            />
-
-        </View>
+        <SafeAreaView style={styles.continer}>
+            <View style={styles.continer}>
+                <FlatList
+                    showsVerticalScrollIndicator={false}
+                    data={[1, 2, 3, 4]}
+                    renderItem={() => (<Post />)}
+                    ItemSeparatorComponent={() => <View style={{ height: H(8) }} />}
+                    keyExtractor={(item) => item.id}
+                    ListHeaderComponent={() => headerComponet()}
+                    ListFooterComponent={() => <View style={{ height: H(11) }} />}
+                />
+            </View>
+        </SafeAreaView>
     )
 }
 

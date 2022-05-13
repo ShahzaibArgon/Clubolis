@@ -2,7 +2,7 @@ import { COLORS, H, STYLESHEET, W, RFVALUE, FONTS } from "../../constants/StyleC
 export default STYLESHEET.create({
     continer: {
         flex: 1,
-        backgroundColor: COLORS.primary
+        backgroundColor: COLORS.primary,
     },
     imageStyle: {
         width: W(92),

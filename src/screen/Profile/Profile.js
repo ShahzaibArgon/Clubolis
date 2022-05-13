@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, Image, TouchableOpacity } from 'react-native';
+import { View, Text, Image, TouchableOpacity,SafeAreaView } from 'react-native';
 import styles from './styles'
 import { STRINGS, IMAGES, H, FONTS, COLORS } from "../../constants/StyleCommonfile";
 import Header from '../../components/Header/Header'
@@ -44,11 +44,11 @@ const Profile = (props) => {
     ])
 
     return (
-        <View style={styles.continer}>
+        <SafeAreaView style={styles.continer}>
             <Header
                 imageName={IMAGES.bacKarrow}
                 isHomeScreen={true}
-                appNameImage={IMAGES.appNameLogo}
+                appNameImage={IMAGES.whiteAppLogo}
                 rightSideImage={IMAGES.edit}
             />
             <View style={styles.whiteContiner}>
@@ -123,7 +123,7 @@ const Profile = (props) => {
                     <Text style={[styles.textStyle, { fontFamily: FONTS.Bold, color: COLORS.primary }]}>{STRINGS.Logout}</Text>
                 </TouchableOpacity>
             </View>
-        </View>
+        </SafeAreaView>
     )
 }
 

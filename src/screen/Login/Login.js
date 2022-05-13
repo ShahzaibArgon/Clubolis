@@ -6,6 +6,9 @@ import {
     View,
     Image,
     TouchableOpacity,
+    SafeAreaView,
+    StatusBar,
+    Platform
 } from "react-native";
 import { normalize } from "../../Helpers/normalize";
 import { getStatusBarHeight } from 'react-native-status-bar-height';
@@ -13,7 +16,8 @@ import { IMAGES, W, H, FONTS, COLORS, RFVALUE } from '../../constants/StyleCommo
 
 const Login = ({ navigation, route }) => {
     return (
-        <View style={styles.container}>
+        <SafeAreaView style={styles.container}>
+            <StatusBar backgroundColor={COLORS.primary} barStyle={'light-content'} />
             <ImageBackground
                 source={IMAGES.secondBackground}
                 resizeMode="cover"
@@ -41,20 +45,21 @@ const Login = ({ navigation, route }) => {
                     </TouchableOpacity>
                 </View>
             </ImageBackground>
-        </View>
+        </SafeAreaView>
     );
 }
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        backgroundColor: COLORS.primary
     },
     image: {
         width: W(100),
         height: H(100),
         justifyContent: "space-between",
         alignItems: "center",
-        paddingTop: getStatusBarHeight() + normalize(40),
-        paddingBottom: normalize(89),
+        paddingTop: getStatusBarHeight() + normalize(20),
+        paddingBottom: normalize(Platform.OS === 'android' ? 89 : 150),
     },
     logo: {
         width: normalize(222),

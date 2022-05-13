@@ -42,6 +42,10 @@ const strings = {
     FoodDaFiesta:'Food Da Fiesta',
     amount:'$36',
     locationName:'Lipsy, London',
-    dateTime:'31 Sat, Mar 2022    6:00 pm'
+    dateTime:'31 Sat, Mar 2022    6:00 pm',
+    Invitefriends:'Invite friends',
+    BuyTicket:'Buy Ticket',
+    About:'About',
+    aboutDes:'If you re looking for a money-making business idea, a food truck is a great one. Successful food trucks can bring in more than $500,000 per year, with startup costs around $40,000. Starting a food truck generally takes three to 12 months and requires these nine steps: Research local food trucks and laws.'
 }
 export default strings

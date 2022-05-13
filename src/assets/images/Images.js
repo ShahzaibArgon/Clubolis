@@ -55,7 +55,9 @@ const images ={
      eventImage:require('../images/eventimage.png'),
      clock:require('../images/Clock.png'),
      location:require('../images/locationIcon.png'),
-     eventBackground:require('../images/eventDetailbackground.png')
+     eventBackground:require('../images/eventDetailbackground.png'),
+     emptyStarRating:require('../images/emptyStar.png'),
+     fillStarRating:require('../images/fillStar.png'),
 }
 
 export default images;

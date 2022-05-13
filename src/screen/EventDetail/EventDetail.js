@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { View, Text, Image, ImageBackground } from 'react-native';
+import { View, Text, Image, ImageBackground, TouchableOpacity, SafeAreaView } from 'react-native';
 import styles from './Styles'
-import { COLORS, IMAGES, STRINGS, W } from '../../constants/StyleCommonfile';
+import { COLORS, H, IMAGES, STRINGS, W } from '../../constants/StyleCommonfile';
 import Header from '../../components/Header/Header';
 import { SliderBox } from "react-native-image-slider-box";
+import CustomeButton from '../../components/CustomeButton/CustomeButton';
+
 const EventDetail = (props) => {
     const images = [
         IMAGES.laptop,
@@ -11,7 +13,7 @@ const EventDetail = (props) => {
         IMAGES.FoodCart,
     ]
     return (
-        <View style={styles.container}>
+        <SafeAreaView style={styles.container}>
             <Header
                 imageName={IMAGES.whiteBackArrow}
                 isHomeScreen={true}
@@ -50,15 +52,46 @@ const EventDetail = (props) => {
                     <Text style={styles.dateTimeTextStyle}>{STRINGS.locationName}</Text>
                 </View>
             </View>
-
+            <View style={{ height: 10 }} />
             <ImageBackground
                 source={IMAGES.eventBackground}
-                style={styles.backGroundImageStyle}
-            >
-
+                style={styles.backGroundImageStyle}>
+                <TouchableOpacity style={styles.inviteFriendContiner}>
+                    <Text style={styles.inviteFriendTextStyle}>{STRINGS.Invitefriends}</Text>
+                    <Image
+                        source={IMAGES.groupProfile}
+                        resizeMode={'contain'}
+                        style={styles.groupProfileImageStyle}
+                    />
+                </TouchableOpacity>
             </ImageBackground>
+            <View style={styles.startRatingContiner}>
+                <View style={styles.whiteContiner}>
+                    {
+                        [1, 2, 3, 4, 5].map((item) => {
+                            return (
+                                <Image
+                                    resizeMode={'contain'}
+                                    source={IMAGES.emptyStarRating}
+                                    style={styles.starRatingStyle}
+                                />
+                            )
+                        })
+                    }
+                </View>
+                <View style={styles.ratingContinerStyle} >
+                    <Text style={styles.ratingTextStyle}>4.6</Text>
+                </View>
+            </View>
 
-        </View>
+            <Text style={styles.aboutTextStyle}>{STRINGS.About}</Text>
+            <Text style={styles.desTextStyle}>{STRINGS.aboutDes}</Text>
+            <View style={{ height: H(5) }} />
+            <CustomeButton
+                btnText={STRINGS.BuyTicket}
+            />
+
+        </SafeAreaView>
     )
 }
 

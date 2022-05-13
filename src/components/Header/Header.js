@@ -40,13 +40,14 @@ const styles = STYLESHEET.create({
     continer: {
         flexDirection: 'row',
         alignItems: 'center',
-        height: H(10),
+        height: H(6),
         justifyContent: 'space-between',
-        padding: H(1)
+        paddingHorizontal: H(1),
+
     },
     backArrowImageStyle: {
         width: W(8),
-        height: H(2.5),
+        height: H(2),
     },
     appNameStyle: {
         width: W(20),

@@ -7,7 +7,8 @@ import {
     TouchableOpacity,
     ScrollView,
     KeyboardAvoidingView,
-    Platform
+    Platform,
+    SafeAreaView
 } from "react-native";
 import { normalize } from "../../Helpers/normalize";
 import { getStatusBarHeight } from 'react-native-status-bar-height';
@@ -21,77 +22,79 @@ const Login2 = ({ navigation, route }) => {
     const [password, setPassword] = useState('');
     const [showPassword, setShowPassword] = useState(true);
     return (
-        <ScrollView style={styles.container}>
-            <KeyboardAvoidingView
-                style={{ justifyContent: "center", alignItems: "center" }}
-                behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
-                <View style={styles.body}>
-                    <View>
-                        <Text style={styles.heading}>{"Login"}</Text>
-                        <Text style={styles.text}>{"Log in to your account here"}</Text>
-                    </View>
-                    <View style={styles.loginView}>
-                        <TextInput
-                            mode="outlined"
-                            outlineColor={COLORS.darkWhite}
-                            style={styles.input}
-                            placeholder="Email or Username"
-                            placeholderTextColor={"white"}
-                            value={text}
-                            theme={{ colors: { text: 'white', primary: 'white' }, roundness: normalize(9) }}
-                            onChangeText={text => setText(text)}
-                        />
-                        <TextInput
-                            mode="outlined"
-                            outlineColor={COLORS.darkWhite}
-                            style={styles.input}
-                            placeholder="Password"
-                            placeholderTextColor={"white"}
-                            secureTextEntry={showPassword}
-                            theme={{ colors: { text: 'white', primary: 'white' }, roundness: normalize(9) }}
-                            onChangeText={(password) => { setPassword(password) }}
-                            right={<TextInput.Icon onPress={() => setShowPassword(prev => !prev)} name={showPassword ? "eye-off" : "eye"} color={"white"} />}
-                        />
-                        <TouchableOpacity
-                            onPress={() => navigation.navigate(BOTTOMTAB)}
-                            style={styles.button}
-                        >
-                            <Text style={styles.buttonText}>{"Log In"}</Text>
-                        </TouchableOpacity>
-                    </View>
-                    <Text style={[styles.tagLine, { marginVertical: normalize(30) }]}>{"Or connect using"}</Text>
-                    <View style={styles.socialLogins}>
-                        <TouchableOpacity
-                            style={styles.googleLoginBtn}>
-                            <AntDesign name="google" size={normalize(30)} color="white" />
-                        </TouchableOpacity>
+        <SafeAreaView style={styles.container}>
+            <ScrollView style={styles.container}>
+                <KeyboardAvoidingView
+                    style={{ justifyContent: "center", alignItems: "center" }}
+                    behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
+                    <View style={styles.body}>
+                        <View>
+                            <Text style={styles.heading}>{"Login"}</Text>
+                            <Text style={styles.text}>{"Log in to your account here"}</Text>
+                        </View>
+                        <View style={styles.loginView}>
+                            <TextInput
+                                mode="outlined"
+                                outlineColor={COLORS.darkWhite}
+                                style={styles.input}
+                                placeholder="Email or Username"
+                                placeholderTextColor={"white"}
+                                value={text}
+                                theme={{ colors: { text: 'white', primary: 'white' }, roundness: normalize(9) }}
+                                onChangeText={text => setText(text)}
+                            />
+                            <TextInput
+                                mode="outlined"
+                                outlineColor={COLORS.darkWhite}
+                                style={styles.input}
+                                placeholder="Password"
+                                placeholderTextColor={"white"}
+                                secureTextEntry={showPassword}
+                                theme={{ colors: { text: 'white', primary: 'white' }, roundness: normalize(9) }}
+                                onChangeText={(password) => { setPassword(password) }}
+                                right={<TextInput.Icon onPress={() => setShowPassword(prev => !prev)} name={showPassword ? "eye-off" : "eye"} color={"white"} />}
+                            />
+                            <TouchableOpacity
+                                onPress={() => navigation.navigate(BOTTOMTAB)}
+                                style={styles.button}
+                            >
+                                <Text style={styles.buttonText}>{"Log In"}</Text>
+                            </TouchableOpacity>
+                        </View>
+                        <Text style={[styles.tagLine, { marginVertical: normalize(30) }]}>{"Or connect using"}</Text>
+                        <View style={styles.socialLogins}>
+                            <TouchableOpacity
+                                style={styles.googleLoginBtn}>
+                                <AntDesign name="google" size={normalize(30)} color="white" />
+                            </TouchableOpacity>
 
-                        <TouchableOpacity
-                            style={styles.facebookLoginBtn}>
-                            <MaterialCommunityIcons name="facebook" size={normalize(32)} color="white" />
-                        </TouchableOpacity>
-                    </View>
-                    <View style={styles.signUp}>
-                        <TouchableOpacity disabled={true}>
-                            <Text style={styles.tagLine}>{"Don't have an account?"}</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity>
-                            <Text onPress={() => navigation.navigate("SignUp")} style={styles.signUpText}>{" Sign Up"}</Text>
-                        </TouchableOpacity>
-                    </View>
-                    <View style={{ marginTop: normalize(15) }}>
+                            <TouchableOpacity
+                                style={styles.facebookLoginBtn}>
+                                <MaterialCommunityIcons name="facebook" size={normalize(32)} color="white" />
+                            </TouchableOpacity>
+                        </View>
                         <View style={styles.signUp}>
-                            <Text style={styles.termsText}>{"By signing up, you agree with the"}</Text>
-                            <Text style={[styles.termsText, { color: "#1F62AA", fontSize: normalize(11) }]}>{" Terms of Service"}</Text>
+                            <TouchableOpacity disabled={true}>
+                                <Text style={styles.tagLine}>{"Don't have an account?"}</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity>
+                                <Text onPress={() => navigation.navigate("SignUp")} style={styles.signUpText}>{" Sign Up"}</Text>
+                            </TouchableOpacity>
                         </View>
-                        <View style={[styles.signUp, { marginTop: normalize(3) }]}>
-                            <Text style={styles.termsText}>{"and"}</Text>
-                            <Text style={[styles.termsText, { color: "#1F62AA", fontSize: normalize(11) }]}>{" Privacy Policy"}</Text>
+                        <View style={{ marginTop: normalize(15) }}>
+                            <View style={styles.signUp}>
+                                <Text style={styles.termsText}>{"By signing up, you agree with the"}</Text>
+                                <Text style={[styles.termsText, { color: "#1F62AA", fontSize: normalize(11) }]}>{" Terms of Service"}</Text>
+                            </View>
+                            <View style={[styles.signUp, { marginTop: normalize(3) }]}>
+                                <Text style={styles.termsText}>{"and"}</Text>
+                                <Text style={[styles.termsText, { color: "#1F62AA", fontSize: normalize(11) }]}>{" Privacy Policy"}</Text>
+                            </View>
                         </View>
                     </View>
-                </View>
-            </KeyboardAvoidingView>
-        </ScrollView>
+                </KeyboardAvoidingView>
+            </ScrollView>
+        </SafeAreaView>
     );
 }
 const styles = StyleSheet.create({
