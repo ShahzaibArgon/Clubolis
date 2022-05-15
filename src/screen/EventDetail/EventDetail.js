@@ -5,6 +5,7 @@ import { COLORS, H, IMAGES, STRINGS, W } from '../../constants/StyleCommonfile';
 import Header from '../../components/Header/Header';
 import { SliderBox } from "react-native-image-slider-box";
 import CustomeButton from '../../components/CustomeButton/CustomeButton';
+import { BUYTICKETS } from '../../constants/Navigation';
 
 const EventDetail = (props) => {
     const images = [
@@ -89,6 +90,7 @@ const EventDetail = (props) => {
             <View style={{ height: H(5) }} />
             <CustomeButton
                 btnText={STRINGS.BuyTicket}
+                onPress={() => props.navigation.navigate(BUYTICKETS)}
             />
 
         </SafeAreaView>

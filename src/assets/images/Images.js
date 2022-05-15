@@ -58,6 +58,9 @@ const images ={
      eventBackground:require('../images/eventDetailbackground.png'),
      emptyStarRating:require('../images/emptyStar.png'),
      fillStarRating:require('../images/fillStar.png'),
+     checkOutImage:require('../images/checkOutImage.png'),
+     plus:require('../images/plus.png'),
+     mius:require('../images/mius.png'),
 }
 
 export default images;

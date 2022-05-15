@@ -16,7 +16,7 @@ const CustomeButton = (props) => {
 const styles = STYLESHEET.create({
     btn: {
         width: W(90),
-        height: H(7.3),
+        height: H(6.7),
         borderRadius: H(4),
         backgroundColor: COLORS.secondary,
         alignSelf: 'center',
