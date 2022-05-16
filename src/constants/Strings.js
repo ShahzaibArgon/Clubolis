@@ -47,6 +47,11 @@ const strings = {
     BuyTicket:'Buy Ticket',
     About:'About',
     aboutDes:'If you re looking for a money-making business idea, a food truck is a great one. Successful food trucks can bring in more than $500,000 per year, with startup costs around $40,000. Starting a food truck generally takes three to 12 months and requires these nine steps: Research local food trucks and laws.',
-    checkout:'CHECKOUT - '
+    checkout:'CHECKOUT - ',
+    FoodCornerTruck:'Food Corner Truck',
+    Readmore:'Read  more',
+    BusinessName:'Business Name',
+    BusinessCategory:'Business Category',
+    BusinessNumber:'Business Number'
 }
 export default strings

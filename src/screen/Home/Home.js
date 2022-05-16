@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import { View, Text, Image, TextInput, FlatList, ScrollView, SafeAreaView, StatusBar } from 'react-native';
+import { View, Text, Image, TextInput, FlatList, ScrollView, SafeAreaView, StatusBar ,TouchableOpacity} from 'react-native';
 import { COLORS, H, IMAGES, STRINGS, W } from '../../constants/StyleCommonfile';
 import Header from "../../components/Header/Header";
 import styles from './Styles'
+import { BUSSINESSDETAIL } from "../../constants/Navigation";
+
 
 const Home = (props) => {
     const [featureBussines, setFeaturedBussiness] = useState([
@@ -40,14 +42,16 @@ const Home = (props) => {
 
     const renderFeatureBussiness = ({ item }) => {
         return (
-            <View style={{ alignItems: 'center' }}>
+            <TouchableOpacity 
+             onPress={()=>props.navigation.navigate(BUSSINESSDETAIL)}
+            style={{ alignItems: 'center' }}>
                 <Image
                     source={item.image}
                     resizeMode={'cover'}
                     style={styles.featureImageStyle}
                 />
                 <Text style={styles.textStyle}>{item.name}</Text>
-            </View>
+            </TouchableOpacity>
         )
     }
 

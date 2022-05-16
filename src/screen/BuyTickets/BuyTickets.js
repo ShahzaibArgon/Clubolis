@@ -12,6 +12,7 @@ const BuyTickets = (props) => {
     return (
         <SafeAreaView style={styles.container}>
             <Header
+                onBackPress={()=>props.navigation.goBack()}
                 imageName={IMAGES.whiteBackArrow}
                 isHomeScreen={true}
                 appNameImage={IMAGES.whiteAppLogo}

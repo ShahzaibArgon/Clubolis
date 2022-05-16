@@ -61,6 +61,7 @@ const images ={
      checkOutImage:require('../images/checkOutImage.png'),
      plus:require('../images/plus.png'),
      mius:require('../images/mius.png'),
+     bussinessFactory:require('../images/BussinessFactory.png')
 }
 
 export default images;
