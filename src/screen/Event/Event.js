@@ -15,6 +15,7 @@ const Event = (props) => {
                     isHomeScreen={true}
                     appNameImage={IMAGES.whiteAppLogo}
                     rightSideImage={IMAGES.whiteBellIcon}
+                    onBackPress={()=>props.navigation.goBack()}
                 />
                 <Image
                     source={IMAGES.laptop}

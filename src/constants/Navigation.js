@@ -5,3 +5,6 @@ export const LOGIN = 'Login';
 export const EVENTDETAIL ='EventDetail';
 export const BUYTICKETS = 'BuyTickets';
 export const BUSSINESSDETAIL = 'BussinessDetail';
+export const UPLOADPOST = 'UploadPost';
+export const EVENT = 'Event';
+export const BUSSINESSFORUM ="BussinessForum";

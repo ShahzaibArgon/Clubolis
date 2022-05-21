@@ -24,28 +24,38 @@ import Event from '../screen/Event/Event';
 import Profile from '../screen/Profile/Profile';
 import Login from '../screen/Login/Login';
 import { COLORS, FONTS, H, IMAGES, STRINGS, W } from '../constants/StyleCommonfile';
-import colors from '../assets/colors/Colors';
 import ActivityScreen from '../screen/ActivityScreen/ActivityScreen';
+import { BUSSINESSFORUM, EVENT, UPLOADPOST } from '../constants/Navigation';
 
 const { height, width } = Dimensions.get('window');
 
 const BottomNavigator = props => {
     const [isMediaOptionsModal, setMediaOptionsModal] = useState(false);
 
-    const _handleServe = () => {
-        setMediaOptionsModal(false);
-        props.navigation.navigate(JOBPOST);
-    };
     const checkAuth = () => {
         setMediaOptionsModal(true);
     };
 
-    const _handleShare = () => {
+    const uploadPost = () => {
         setMediaOptionsModal(false);
         setTimeout(() => {
-            props.navigation.navigate(SHAREPOST);
+            props.navigation.navigate(UPLOADPOST)
         }, 700);
-    };
+    }
+
+    const handleAddEvent = () =>{
+        setMediaOptionsModal(false);
+        setTimeout(() => {
+            props.navigation.navigate(EVENT)
+        }, 700);
+    }
+
+    const _handleBussinessFourm = () =>{
+        setMediaOptionsModal(false);
+        setTimeout(() => {
+            props.navigation.navigate(BUSSINESSFORUM)
+        }, 700);
+    }
 
     const Tab = createBottomTabNavigator();
     const screenOptions = {
@@ -123,7 +133,7 @@ const BottomNavigator = props => {
                     options={{
                         tabBarIconStyle: { display: 'none' },
                         tabBarIcon: ({ color, focused }) => (
-                            <View style={styles.postIcon}>
+                            <View style={[styles.postIcon, { zIndex: 1000 }]}>
                                 {focused ? (
                                     <Image
                                         style={styles.IconStyle}
@@ -187,7 +197,6 @@ const BottomNavigator = props => {
                     source={images.centerButton}
                 />
             </Pressable>
-
             <Modal
                 isVisible={isMediaOptionsModal}
                 animationInTiming={20}
@@ -198,10 +207,9 @@ const BottomNavigator = props => {
                 useNativeDriver={true}
                 onBackButtonPress={() => setMediaOptionsModal(false)}>
                 <ImageBackground
-                    source={IMAGES.bottomTabSaqurebackgroundImage}
                     style={styles.btnsContainer}>
                     <TouchableOpacity
-                        onPress={() => _handleServe()}
+                        onPress={() => uploadPost()}
                         style={styles.optionIconContainer}>
                         <Image
                             style={styles.floatingButtonStyle}
@@ -209,7 +217,7 @@ const BottomNavigator = props => {
                         <Text style={styles.btnTextStyle}>{STRINGS.AddPhotoCaption}</Text>
                     </TouchableOpacity>
                     <TouchableOpacity
-                        onPress={() => _handleShare()}
+                        onPress={() =>_handleBussinessFourm() }
                         disabled={!isMediaOptionsModal}
                         style={styles.optionIconContainer}>
                         <Image
@@ -218,7 +226,7 @@ const BottomNavigator = props => {
                         <Text style={styles.btnTextStyle}>{STRINGS.AddBusiness}</Text>
                     </TouchableOpacity>
                     <TouchableOpacity
-                        onPress={() => _handleShare()}
+                        onPress={() =>handleAddEvent() }
                         disabled={!isMediaOptionsModal}
                         style={styles.eventIconStyle}>
                         <Image
@@ -247,6 +255,7 @@ const styles = StyleSheet.create({
         width: Platform.OS == 'ios' ? height / 10 : height / 12,
         marginTop: Platform.OS == 'ios' ? height / 10 : height / 38,
         alignItems: 'center',
+
     },
     activeProfile: {
         borderWidth: 2,
@@ -291,24 +300,29 @@ const styles = StyleSheet.create({
         paddingBottom: height / 14 + 10,
         height: H('90%'),
         width: W('100%'),
-        zIndex: 9999,
+
     },
     btnsContainer: {
-        height: H(32),
-        width: '100%',
+        height: H(28),
+        width: W(104),
         flexDirection: 'row',
         justifyContent: 'space-around',
         opacity: 0.9,
-        bottom: 3,
-        resizeMode: 'contain',
-        overflow: 'hidden'
+        bottom: 4,
+        resizeMode: 'cover',
+        overflow: 'hidden',
+        backgroundColor: COLORS.bottomTabSqureColor,
+        borderTopLeftRadius: H(24),
+        borderTopRightRadius: H(24),
+        marginLeft: H(-1),
+        zIndex: -1
     },
     optionIconContainer: {
-        height: Platform.OS == 'ios' ? height / 2.2 : height / 12,
-        width: Platform.OS == 'ios' ? height / 14 : height / 12,
+        height: Platform.OS == 'ios' ? height / 2.5 : height / 2.3,
+        width: Platform.OS == 'ios' ? width / 4 : height / 2,
         alignItems: 'center',
         justifyContent: 'center',
-        marginHorizontal: Platform.OS == 'ios' ? height / 28 : height / 24,
+
     },
     videoRecordingBtn: {
         alignSelf: 'center',
@@ -336,16 +350,12 @@ const styles = StyleSheet.create({
         fontFamily: FONTS.Bold,
         marginTop: H(0.5)
     },
-    eventIconStyle:{
-        alignItems:'center',
-        backgroundColor:'#ada',
-        position:'absolute',
-        left:0,
-        right:0,
-        alignSelf:'center',
-        alignItems:'center',
-        justifyContent:'center',
-        width:W(20),
-        alignSelf:'center'
+    eventIconStyle: {
+        position: 'absolute',
+        right: width / 2.3,
+        alignItems: 'center',
+        width: W(20),
+        alignSelf: 'center',
+        top: H(7),
     }
 });

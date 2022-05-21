@@ -33,7 +33,7 @@ export default STYLESHEET.create({
     dateTimeTextStyle: {
         color: COLORS.darkWhite,
         paddingLeft: H(1),
-        fontSize: RFVALUE(13),
+        fontSize: RFVALUE(11),
         fontFamily: FONTS.medium
     },
     timeContiner: {

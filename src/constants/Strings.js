@@ -52,6 +52,10 @@ const strings = {
     Readmore:'Read  more',
     BusinessName:'Business Name',
     BusinessCategory:'Business Category',
-    BusinessNumber:'Business Number'
+    BusinessNumber:'Business Number',
+    UploadPost:'Upload Post',
+    writeCapation:'Write a caption...',
+    Addapicturevideo:'Add a picture/video',
+    BusinessName:'Business Name'
 }
 export default strings

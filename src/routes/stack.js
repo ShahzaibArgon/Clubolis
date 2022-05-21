@@ -7,12 +7,15 @@ import SignUp from '../screen/SignUp/SignUp';
 import SplashScreen from '../screen/SplashScreen/SplashScreen';
 import OtpVerification from '../screen/OtpVerification/OtpVerification';
 import OtpMobileVerification from '../screen/OtpMobileVerification/OtpMobileVerification';
-import { BOTTOMTAB, BUSSINESSDETAIL, BUYTICKETS, EVENTDETAIL, OTPEMAILVERIFICATION, OTPMOBILEVERIIFCATION } from '../constants/Navigation';
+import { BOTTOMTAB, BUSSINESSDETAIL, BUSSINESSFORUM, BUYTICKETS, EVENT, EVENTDETAIL, OTPEMAILVERIFICATION, OTPMOBILEVERIIFCATION, UPLOADPOST } from '../constants/Navigation';
 import OtpEmailVerification from '../screen/OtpEmailVerify/OtpEmailVerification';
 import BottomNavigator from './Bottomtab';
 import EventDetail from '../screen/EventDetail/EventDetail';
 import BuyTickets from '../screen/BuyTickets/BuyTickets';
 import BussinessDetail from '../screen/BussinessDetail/BussinessDetail';
+import UploadPost from '../screen/UploadPost/uploadPost';
+import Event from '../screen/Event/Event';
+import BussinessForum from '../screen/BussinessFroum/BussinessForum';
 const Stack = createNativeStackNavigator();
 const StackNavigation = () => {
   return (
@@ -33,6 +36,9 @@ const StackNavigation = () => {
         <Stack.Screen name={EVENTDETAIL} component={EventDetail} />
         <Stack.Screen name={BUYTICKETS} component={BuyTickets} />
         <Stack.Screen name={BUSSINESSDETAIL} component={BussinessDetail} />
+        <Stack.Screen name={UPLOADPOST} component={UploadPost} />
+        <Stack.Screen name={EVENT} component={Event} />
+        <Stack.Screen name={BUSSINESSFORUM} component={BussinessForum} />
       </Stack.Navigator>
     </NavigationContainer>
   );

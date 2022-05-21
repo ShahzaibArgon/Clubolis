@@ -10,7 +10,6 @@ const Header = (props) => {
                     source={props.imageName}
                     resizeMode={'contain'}
                     style={styles.backArrowImageStyle}
-
                 />
             </TouchableOpacity>
             {props.isHomeScreen === true ?
@@ -46,8 +45,8 @@ const styles = STYLESHEET.create({
 
     },
     backArrowImageStyle: {
-        width: W(8),
-        height: H(2),
+        width: W(7),
+        height: H(2.5),
     },
     appNameStyle: {
         width: W(20),
